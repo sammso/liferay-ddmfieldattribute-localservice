@@ -1,0 +1,7 @@
+Bundle-Name: com.sohlman.ddmfieldattribute.portlet
+Bundle-SymbolicName: com.sohlman.ddmfieldattribute.portlet
+Bundle-Version: 1.0.0-SNAPSHOT
+Web-ContextPath: /ddm-field-attribute-test-portlet
+-consumer-policy: ${replacestring;${range;[==,==]};.*,(.*)];$1}
+-dsannotations-options: inherit
+-provider-policy: ${replacestring;${range;[==,==]};.*,(.*)];$1}
