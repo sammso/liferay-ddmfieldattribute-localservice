@@ -1,0 +1,12 @@
+Bundle-Name: com.sohlman.ddmfieldattribute.api
+Bundle-SymbolicName: com.sohlman.ddmfieldattribute.api
+Bundle-Version: 1.0.0-SNAPSHOT
+Export-Package:\
+	com.sohlman.ddmfieldattribute.exception,\
+	com.sohlman.ddmfieldattribute.model,\
+	com.sohlman.ddmfieldattribute.service,\
+	com.sohlman.ddmfieldattribute.service.persistence
+-check: EXPORTS
+-consumer-policy: ${replacestring;${range;[==,==]};.*,(.*)];$1}
+-includeresource: META-INF/service.xml=../service/service.xml
+-provider-policy: ${replacestring;${range;[==,==]};.*,(.*)];$1}

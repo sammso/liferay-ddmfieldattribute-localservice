@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+
+<project
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+>
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>com.sohlman.ddmfieldattribute.service</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<parent>
+		<groupId>com.sohlman.ddmfieldattribute</groupId>
+		<artifactId>com.sohlman.ddmfieldattribute</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+	<dependencies>
+		<dependency>
+			<groupId>com.liferay.portal</groupId>
+			<artifactId>release.dxp.api</artifactId>
+			<version>${liferay.bom.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.sohlman.ddmfieldattribute</groupId>
+			<artifactId>com.sohlman.ddmfieldattribute.api</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>com.liferay</groupId>
+				<artifactId>com.liferay.portal.tools.service.builder</artifactId>
+				<version>1.0.508</version>
+				<configuration>
+					<apiDirName>../api/src/main/java</apiDirName>
+					<autoImportDefaultReferences>true</autoImportDefaultReferences>
+					<autoNamespaceTables>true</autoNamespaceTables>
+					<buildNumberIncrement>true</buildNumberIncrement>
+					<hbmFileName>src/main/resources/META-INF/module-hbm.xml</hbmFileName>
+					<implDirName>src/main/java</implDirName>
+					<inputFileName>service.xml</inputFileName>
+					<!--
+						When modifying service.xml check
+						src/main/resources/META-INF/portlet-model-hints.xml
+					-->
+					<modelHintsFileName>target/generated-src/main/resources/META-INF/portlet-model-hints.xml</modelHintsFileName>
+					<!--
+						When modifying service.xml check
+						src/main/resources/META-INF/sql
+					-->
+					<sqlDirName>target/generated-src/main/resources/META-INF/sql</sqlDirName>
+					<sqlFileName>tables.sql</sqlFileName>
+					<osgiModule>true</osgiModule>
+					<propsUtil>com.sohlman.ddmfieldattribute.service.util.PropsUtil</propsUtil>
+					<resourcesDirName>src/main/resources</resourcesDirName>
+					<springFileName>src/main/resources/META-INF/spring/module-spring.xml</springFileName>
+					<springNamespaces>beans,osgi</springNamespaces>
+					<testDirName>src/main/test</testDirName>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>biz.aQute.bnd</groupId>
+				<artifactId>bnd-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+</project>
