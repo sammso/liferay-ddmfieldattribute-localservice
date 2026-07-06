@@ -122,6 +122,7 @@
 		<module>api</module>
 		<module>service</module>
 		<module>portlet</module>
+		<module>deploy</module>
 	</modules>
 
 	<repositories>
